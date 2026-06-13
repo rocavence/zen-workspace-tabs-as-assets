@@ -1,44 +1,28 @@
 # Workspace Tabs as Assets — a Zen Browser Mod
 
-Tabs in a workspace are **assets**, not disposable tabs. This mod removes the
-hover `×` close button so a tab can't be dismissed by an accidental click.
+Pinned tabs in a workspace are **assets**, not disposable tabs. This mod removes
+the hover `×` close button on **pinned tabs** so they can't be dismissed by an
+accidental click. Normal (unpinned) tabs are unaffected and keep their `×`.
 
 ![preview](./image.png)
 
-## Scope
+## Closing a pinned tab on purpose
 
-Open this mod's preferences to choose how far it reaches:
+Right-click → **Close Tab**, or **middle-click** the tab.
 
-- **Default** — hides the `×` on **pinned tabs + Essentials** only.
-- **"Treat ALL workspace tabs as assets"** — also hides the `×` on normal tabs.
+## Optional: also stop cmd+w from closing pinned tabs
 
-## Closing a tab on purpose
+Zen Mods are CSS-only and can't rebind keys. If you want cmd+w to leave pinned
+tabs alone, set `zen.pinned-tab-manager.close-shortcut-behavior` in
+`about:config` to e.g. `reset-unload-switch` — Zen will reset/unload the pinned
+tab instead of closing it, while cmd+w keeps working normally on other tabs.
 
-With the `×` gone, close a tab deliberately via **right-click → Close Tab**, or
-**middle-click** the tab.
+## Install (local)
 
-## Optional: also stop cmd+w from closing them
-
-Zen Mods are CSS-only, so this mod **cannot** change what cmd+w does — that
-shortcut still closes the focused tab. If you want cmd+w to leave your asset
-tabs alone too, disable the "Close Tab" shortcut yourself:
-
-1. **Quit Zen** (it rewrites the file on exit).
-2. Edit `zen-keyboard-shortcuts.json` in your profile folder and set
-   `"disabled": true` on the entry with `"id": "key_close"`.
-3. Relaunch Zen. cmd+w will no longer close any tab (other close methods still
-   work). Set it back to `false` to restore.
-
-> Tip: `zen.pinned-tab-manager.close-shortcut-behavior` in `about:config`
-> already makes cmd+w *reset/unload* pinned tabs instead of closing them, if you
-> only care about pinned tabs and want to keep cmd+w working for normal ones.
-
-## Install
-
-Get it from the [Zen Mods store](https://zen-browser.app/mods), or install
-locally by copying `chrome.css`, `readme.md`, and `preferences.json` into a
-folder under your profile's `chrome/zen-themes/<uuid>/`.
+Copy `chrome.css` and `readme.md` into a folder under your Zen profile's
+`chrome/zen-themes/<uuid>/`, add an entry for it in `zen-themes.json`, and
+restart Zen.
 
 ## License
 
-[CC BY-NC-SA 4.0](./LICENSE) — required by the Zen theme store.
+[CC BY-NC-SA 4.0](./LICENSE).

@@ -1,8 +1,0 @@
-[
-    {
-        "property": "uc.workspace-assets.all-tabs",
-        "label": "Treat ALL workspace tabs as assets (also hides the × on normal tabs, not just pinned/Essentials)",
-        "type": "checkbox",
-        "defaultValue": false
-    }
-]
