@@ -1,0 +1,28 @@
+/* Workspace Tabs as Assets
+ *
+ * Treats workspace tabs as persistent assets rather than throwaway tabs:
+ * the hover (x) close button is removed so a tab can't be dismissed by an
+ * accidental click.
+ *
+ * Scope (set in this mod's preferences):
+ *   - Default        -> pinned tabs + Essentials only
+ *   - "all tabs" on  -> every tab in the workspace, including normal ones
+ *
+ * NOTE: cmd+w protection is NOT part of this mod. Zen Mods are CSS-only and
+ * cannot rebind keys. To also stop cmd+w from closing these tabs, disable the
+ * "Close Tab" shortcut (key_close) in zen-keyboard-shortcuts.json — see readme.
+ * To close an asset tab on purpose: right-click -> Close Tab, or middle-click.
+ */
+
+/* Default scope: pinned tabs + Essentials. */
+.tabbrowser-tab[pinned] .tab-close-button,
+.tabbrowser-tab[zen-essential="true"] .tab-close-button {
+  display: none !important;
+}
+
+/* Opt-in: extend to EVERY tab in the workspace (incl. normal tabs). */
+@media (-moz-bool-pref: "uc.workspace-assets.all-tabs") {
+  .tabbrowser-tab .tab-close-button {
+    display: none !important;
+  }
+}
