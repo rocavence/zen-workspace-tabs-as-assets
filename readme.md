@@ -1,4 +1,4 @@
-# Workspace Tabs as Assets — a Zen Browser Mod
+# Lock Pinned Tabs — a Zen Browser Mod
 
 Pinned tabs in a workspace are **assets**, not disposable tabs. This mod removes
 the hover `×` close button on **pinned tabs** so they can't be dismissed by an
@@ -25,4 +25,4 @@ restart Zen.
 
 ## License
 
-[CC BY-NC-SA 4.0](./LICENSE).
+[MIT](./LICENSE).
